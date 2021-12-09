@@ -23,6 +23,7 @@ export class ColorsController extends BaseController {
     }
   }
 
+  // testing
   async getById(req, res, next) {
     try {
       const color = await colorsService.getById(req.params.colorId)
