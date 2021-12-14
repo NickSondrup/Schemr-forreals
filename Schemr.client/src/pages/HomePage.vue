@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <h1>testing is fun</h1>
+    <h1>My Projects</h1>
     <Project v-for="p in projects" :key="p.id" :project="p" />
   </div>
 </template>
