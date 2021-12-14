@@ -9,6 +9,12 @@ class ProjectsService{
     logger.log('getProjects', res)
     AppState.projects = res.data
   }
+
+  async getProject(projectId) {
+    const res = await api.get(`api/projects/${projectId}`)
+    logger.log('getProject', res)
+    AppState.project = res.data
+  }
 }
 
 export const projectsService = new ProjectsService()
