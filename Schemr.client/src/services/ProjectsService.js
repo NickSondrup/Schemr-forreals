@@ -11,6 +11,7 @@ class ProjectsService{
   }
 
   async getProject(projectId) {
+    AppState.project = {}
     const res = await api.get(`api/projects/${projectId}`)
     logger.log('getProject', res)
     AppState.project = res.data

@@ -1,7 +1,12 @@
 <template>
-  <div class="">
+  <div class="container-fluid">
+    <div class="row">
     <h1>My Projects</h1>
-    <Project v-for="p in projects" :key="p.id" :project="p" />
+    </div>
+    <div class="row">
+        <Project v-for="p in projects" :key="p.id" :project="p" />
+
+    </div>
   </div>
 </template>
 
