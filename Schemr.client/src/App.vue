@@ -2,12 +2,12 @@
   <header>
     <Navbar />
   </header>
-  <main class="bg-secondary">
+  <main class="bg-light-grey">
     <router-view />
   </main>
   <footer>
     <div class="bg-dark text-light text-center p-4">
-      Made with 💖 by CodeWorks
+      Made with 💖 by Nick Sondrup
     </div>
   </footer>
 </template>
@@ -26,5 +26,7 @@ export default {
 </script>
 <style lang="scss">
 @import "./assets/scss/main.scss";
-
+.bg-light-grey{
+  background: #6b6d70;
+}
 </style>

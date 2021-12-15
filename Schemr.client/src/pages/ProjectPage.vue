@@ -3,8 +3,9 @@
     <div class="row mt-3 title-row">
       <div class="col-4">
         <div class=" d-flex justify-content-center">
-        <h1>{{project.name}}</h1>
+        <h1 class="fw-bolder">{{project.name}}</h1>
         </div>
+        <h2 class="ms-4">Sections:</h2>
         <Section v-for="s in sections" :key="s.id" :section="s"/>
       </div>
       <div class="col-8 text-center">

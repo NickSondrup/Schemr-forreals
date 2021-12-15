@@ -1,8 +1,15 @@
 <template>
   <div class="">
-    <h1 @click="getSectionColors(section.id)" class="selectable">{{section.name}}</h1>
-
+    <ul @click="getSectionColors(section.id)" class="selectable fw-bold fs-2" data-bs-toggle="modal" data-bs-target="#section-colors">
+      {{section.name}}
+    </ul>
   </div>
+
+  <Modal id="section-colors">
+    <template #modal-body>
+      <SectionColorsModal />
+    </template>
+  </Modal>
 </template>
 
 
