@@ -16,6 +16,12 @@ class ProjectsService{
     logger.log('getProject', res)
     AppState.project = res.data
   }
+
+  async createProject(data) {
+    const res = await api.post('api/projects', data)
+    logger.log('createProject', res.data)
+    AppState.projects.unshift(res.data)
+  }
 }
 
 export const projectsService = new ProjectsService()

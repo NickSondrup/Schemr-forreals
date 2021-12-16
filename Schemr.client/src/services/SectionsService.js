@@ -16,6 +16,20 @@ class SectionsService {
     AppState.sectionColors = res.data
     logger.log('getSectionColors', AppState.sectionColors)
   }
+
+  async createSection(data) {
+    const res = await api.post('api/sections', data)
+    logger.log('createSection', res.data)
+    AppState.sections = [...AppState.sections, res.data]
+  }
+
+  async deleteSection(sectionId) {
+    const res = await api.delete(`api/sections/${sectionId}`)
+    logger.log('deleteSection', res.data)
+    AppState.sections = AppState.sections.filter(s => s.id !== sectionId)
+    // NOTE unsure if this will be needed vvvvv
+    // AppState.sectionColors = AppState.sectionColors.filter(c => c.sectionId !== sectionId)
+  }
 }
 
 export const sectionsService = new SectionsService()

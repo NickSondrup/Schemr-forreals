@@ -3,14 +3,18 @@
     <div class="row mt-3">
       <div>
         <h1>Colors:</h1>
-        <button class="btn btn-success">add color</button>
+        <button class="btn btn-primary fw-bold" data-bs-toggle="modal" data-bs-target="#color-form">add color</button>
       </div>
     </div>
     <div class="row">
       <Color v-for="c in colors" :key="c.id" :color="c"/>
     </div>
-
   </div>
+  <Modal id="color-form">
+    <template #modal-body>
+      <ColorForm />
+    </template>
+  </Modal>
 </template>
 
 

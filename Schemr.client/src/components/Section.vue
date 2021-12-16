@@ -1,10 +1,10 @@
 <template>
-  <div class="">
+  <div class="d-flex">
     <ul @click="getSectionColors(section.id)" class="selectable fw-bold fs-2" data-bs-toggle="modal" data-bs-target="#section-colors">
       {{section.name}}
     </ul>
+    <i class="mdi mdi-delete-outline fs-4 delete-button selectable ms-3 mt-2" title="delete" @click="deleteSection(section.id)"></i>
   </div>
-
   <Modal id="section-colors">
     <template #modal-body>
       <SectionColorsModal />
@@ -22,19 +22,21 @@ export default {
   props: {
     section: { type: Object, default: () => { return new Object() } }
   },
-  setup(props){
-    // watchEffect(async() => {
-    //   if(AppState.sections)
-    //   try {
-    //     await sectionsService.getSectionColors(props.section.id)
-    //   } catch (error) {
-        
-    //   }
-    // })
+  setup(){
     return {
       async getSectionColors(sectionId) {
         try {
           await sectionsService.getSectionColors(sectionId)
+        } catch (error) {
+          Pop.toast(error.message, 'error')
+        }
+      },
+      async deleteSection(sectionId) {
+        try {
+          if(await Pop.confirm()) {
+            await sectionsService.deleteSection(sectionId)
+            Pop.toast("Section Deleted!", 'success')
+          }
         } catch (error) {
           Pop.toast(error.message, 'error')
         }
@@ -46,5 +48,7 @@ export default {
 
 
 <style lang="scss" scoped>
-
+.delete-button{
+  color: #6a0001;
+}
 </style>
