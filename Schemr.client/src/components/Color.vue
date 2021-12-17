@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-2 my-3">
+  <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 my-3">
     <div class="d-flex justify-content-evenly">
       <span class="fw-bold fs-4">{{color.type}}</span>
       <i class="mdi mdi-delete-outline fs-4 delete-button selectable" title="delete" @click="deleteColor(color.id)"></i>

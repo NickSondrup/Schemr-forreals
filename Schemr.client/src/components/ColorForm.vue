@@ -11,12 +11,18 @@
     </div>
     <div class="form-group">
       <label for="type">Type</label>
-      <input type="text"
+      <select type="text"
             v-model="editable.type"
             id="type"
             class="form-control"
             placeholder="URL..."
       >
+      <option value="Base">Base</option>
+      <option value="Layer">Layer</option>
+      <option value="Dry Brush">Dry Brush</option>
+      <option value="Shade">Shade</option>
+      <option value="Technical">Technical</option>
+      </select>
     </div>
     <div class="form-group">
       <label for="hexcode">Hexcode</label>

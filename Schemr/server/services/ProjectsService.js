@@ -3,7 +3,7 @@ import { BadRequest, Forbidden } from '../utils/Errors.js'
 
 class ProjectsService {
   async getAll(creatorId) {
-    const projects = await dbContext.Projects.find({ creatorId }).populate('creator', 'name picture')
+    const projects = await dbContext.Projects.find({ creatorId }).sort('-createdAt').populate('creator', 'name picture')
     return projects
   }
 

@@ -20,13 +20,13 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto">
         <li>
-          <router-link :to="{ name: 'About' }" class="btn text-primary lighten-30 selectable text-uppercase">
-            About
+          <router-link :to="{ name: 'Colors'}"  class="btn text-primary lighten-30 selectable text-uppercase">
+          Colors
           </router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'Colors'}"  class="btn text-primary lighten-30 selectable text-uppercase">
-          Colors
+          <router-link :to="{ name: 'About' }" class="btn text-primary lighten-30 selectable text-uppercase">
+            About
           </router-link>
         </li>
       </ul>
@@ -116,7 +116,7 @@ a:hover {
   text-transform: uppercase;
 }
 .navbar-nav .router-link-exact-active{
-  border-bottom: 2px solid var(--bs-success);
+  border-bottom: 2px solid var(--bs-primary);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }

@@ -3,7 +3,7 @@ import { BadRequest, Forbidden } from '../utils/Errors.js'
 
 class ColorsService {
   async getAll(query) {
-    const colors = dbContext.Colors.find(query).populate('creator', 'name picture')
+    const colors = dbContext.Colors.find(query).sort('-createdAt').populate('creator', 'name picture')
     return colors
   }
 

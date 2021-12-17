@@ -2,9 +2,9 @@
   <div class="col-md-3 col-lg-2">
     <div class="d-flex justify-content-evenly">
       <span class="mt-1">{{sectionColor.color.name}}</span>
-      <i class="mdi mdi-delete-outline fs-4 delete-button selectable" title="delete" @click="deleteSectionColor(sectionColor.id)"></i>
+      <i class="mdi mdi-delete-outline fs-4 text-danger selectable" title="delete" @click="deleteSectionColor(sectionColor.id)"></i>
     </div>
-    <div :style="{backgroundColor: sectionColor.color.hexcode}" class="color-block rounded-circle"></div>
+    <div :style="{backgroundColor: sectionColor.color.hexcode}" class="color-block border border-dark border-4 rounded-circle"></div>
   </div>
 </template>
 

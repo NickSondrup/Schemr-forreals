@@ -38,12 +38,17 @@
     </div>
     <div class="form-group">
       <label for="modelSize">Model Size</label>
-      <input type="text"
+      <select type="text"
             v-model="editable.modelSize"
             id="modelSize"
             class="form-control"
             placeholder="Model Size..."
       >
+      <option value="Small">Small</option>
+      <option value="Medium">Medium</option>
+      <option value="Large">Large</option>
+      <option value="X-Large">X-Large</option>
+      </select>
     </div>
     <div class="btn-group">
       <button type="submit" class="btn btn-success selectable mt-4">
