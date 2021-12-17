@@ -5,6 +5,7 @@
     </ul>
     <i class="mdi mdi-delete-outline fs-4 delete-button selectable ms-3 mt-2" title="delete" @click="deleteSection(section.id)"></i>
   </div>
+  
   <Modal id="section-colors">
     <template #modal-body>
       <SectionColorsModal :section="section" />

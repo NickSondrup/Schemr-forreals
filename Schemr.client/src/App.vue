@@ -7,7 +7,9 @@
   </main>
   <footer>
     <div class="bg-dark-grey text-light text-center p-4">
+      <a href="https://github.com/NickSondrup" target="_blank">
       Made with 💖 by Nick Sondrup
+      </a>
     </div>
   </footer>
 </template>
