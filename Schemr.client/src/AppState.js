@@ -8,6 +8,7 @@ export const AppState = reactive({
   projects: [],
   project: {},
 
+  section: {},
   sections: [],
   sectionColors: [],
 

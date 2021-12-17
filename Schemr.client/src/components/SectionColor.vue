@@ -1,18 +1,33 @@
 <template>
   <div class="col-md-3 col-lg-2">
-    <span>{{sectionColor.color.name}}</span>
+    <div class="d-flex justify-content-evenly">
+      <span class="mt-1">{{sectionColor.color.name}}</span>
+      <i class="mdi mdi-delete-outline fs-4 delete-button selectable" title="delete" @click="deleteSectionColor(sectionColor.id)"></i>
+    </div>
     <div :style="{backgroundColor: sectionColor.color.hexcode}" class="color-block rounded-circle"></div>
   </div>
 </template>
 
 
 <script>
+import { sectionsService } from '../services/SectionsService.js'
+import Pop from '../utils/Pop.js'
 export default {
   props: {
     sectionColor: { type: Object, default: () => { return new Object() } }
   },
   setup(){
-    return {}
+    return {
+      async deleteSectionColor(id) {
+        try {
+          if(await Pop.confirm()) {
+            await sectionsService.deleteSectionColor(id)
+          }
+        } catch (error) {
+          Pop.toast(error.message, 'error')
+        }
+      }
+    }
   }
 }
 </script>
@@ -21,5 +36,8 @@ export default {
 <style lang="scss" scoped>
 .color-block{
   height: 5rem;
+}
+.delete-button{
+  color: #6a0001;
 }
 </style>

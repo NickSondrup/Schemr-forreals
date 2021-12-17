@@ -1,13 +1,13 @@
 <template>
   <div class="d-flex">
-    <ul @click="getSectionColors(section.id)" class="selectable fw-bold fs-2" data-bs-toggle="modal" data-bs-target="#section-colors">
+    <ul @click="getSectionColors(section.id), getSection(section.id)" class="selectable fw-bold fs-2" data-bs-toggle="modal" data-bs-target="#section-colors">
       {{section.name}}
     </ul>
     <i class="mdi mdi-delete-outline fs-4 delete-button selectable ms-3 mt-2" title="delete" @click="deleteSection(section.id)"></i>
   </div>
   <Modal id="section-colors">
     <template #modal-body>
-      <SectionColorsModal />
+      <SectionColorsModal :section="section" />
     </template>
   </Modal>
 </template>
@@ -18,6 +18,7 @@ import { watchEffect } from '@vue/runtime-core'
 import { AppState } from '../AppState.js'
 import { sectionsService } from '../services/SectionsService.js'
 import Pop from '../utils/Pop.js'
+import { logger } from '../utils/Logger.js'
 export default {
   props: {
     section: { type: Object, default: () => { return new Object() } }
@@ -27,6 +28,13 @@ export default {
       async getSectionColors(sectionId) {
         try {
           await sectionsService.getSectionColors(sectionId)
+        } catch (error) {
+          Pop.toast(error.message, 'error')
+        }
+      },
+      async getSection(sectionId) {
+        try {
+          await sectionsService.getSection(sectionId)
         } catch (error) {
           Pop.toast(error.message, 'error')
         }
