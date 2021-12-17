@@ -2,9 +2,10 @@
   <div class="container-fluid">
     <div class="row mt-3 title-row">
       <div class="col-4">
-        <div class=" d-flex justify-content-center mb-4">
+        <div class=" d-flex justify-content-evenly mb-4">
           <h1 class="fw-bolder">{{project.name}}</h1>
         </div>
+        <button @click="deleteProject(project.id)" class="btn btn-outline-secondary ms-4">Remove Project</button>
         <h2 class="ms-4">Sections:</h2>
         <button class="ms-4 btn btn-primary" data-bs-toggle="modal" data-bs-target="#section-form">Add Section</button>
         <Section v-for="s in sections" :key="s.id" :section="s"/>
@@ -32,6 +33,7 @@ import { projectsService } from '../services/ProjectsService.js'
 import { sectionsService } from '../services/SectionsService.js'
 import { useRoute } from 'vue-router'
 import { AppState } from '../AppState.js'
+import { logger } from '../utils/Logger.js'
 export default {
   setup(){
     const route = useRoute()
@@ -50,7 +52,17 @@ export default {
     })
     return {
       project: computed(()=> AppState.project),
-      sections: computed(()=> AppState.sections)
+      sections: computed(()=> AppState.sections),
+      async deleteProject(projectId) {
+        try {
+          if(await Pop.confirm()){
+            await projectsService.deleteProject(projectId)
+            Pop.toast("Project has been deleted!", 'success')
+          }
+        } catch (error) {
+          Pop.toast(error.message, 'error')
+        }
+      }
     }
   }
 }
@@ -60,5 +72,8 @@ export default {
 <style lang="scss" scoped>
   .project-picture{
     max-height: 500px;
+  }
+  .delete-button{
+  color: #6a0001;
   }
 </style>
