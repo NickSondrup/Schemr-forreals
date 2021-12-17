@@ -1,8 +1,9 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark-grey px-3">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
-      <div class="d-flex flex-column align-items-center">
-        <h1 class="text-primary">Schemr</h1>
+      <div class="d-flex">
+        <img src="../assets/img/color-cirlce.png" alt="" height="60">
+        <h1 class="text-primary ms-2 m-auto">Schemr</h1>
       </div>
     </router-link>
     <button
@@ -19,12 +20,12 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto">
         <li>
-          <router-link :to="{ name: 'About' }" class="btn text-success lighten-30 selectable text-uppercase">
+          <router-link :to="{ name: 'About' }" class="btn text-primary lighten-30 selectable text-uppercase">
             About
           </router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'Colors'}"  class="btn text-success lighten-30 selectable text-uppercase">
+          <router-link :to="{ name: 'Colors'}"  class="btn text-primary lighten-30 selectable text-uppercase">
           Colors
           </router-link>
         </li>
@@ -51,7 +52,7 @@
               height="40"
               class="rounded"
             />
-            <span class="mx-3 text-success lighten-30">{{ user.name }}</span>
+            <span class="mx-3 text-primary lighten-30">{{ user.name }}</span>
           </div>
           <div
             class="dropdown-menu p-0 list-group w-100"
@@ -118,5 +119,8 @@ a:hover {
   border-bottom: 2px solid var(--bs-success);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+}
+.bg-dark-grey{
+  background: #2a2a2b;
 }
 </style>

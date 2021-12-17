@@ -6,7 +6,7 @@
     <router-view />
   </main>
   <footer>
-    <div class="bg-dark text-light text-center p-4">
+    <div class="bg-dark-grey text-light text-center p-4">
       Made with 💖 by Nick Sondrup
     </div>
   </footer>
@@ -28,5 +28,8 @@ export default {
 @import "./assets/scss/main.scss";
 .bg-light-grey{
   background: #6b6d70;
+}
+.bg-dark-grey{
+  background: #2a2a2b;
 }
 </style>

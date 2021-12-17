@@ -1,14 +1,13 @@
 <template>
-  <div class="container">
-    <div class="row">
+  <div class="container-fluid">
+    <div class="row mx-5">
       <div class="">
         <h1>My Projects</h1>
         <button class="btn btn-primary fw-bold my-2" data-bs-toggle="modal" data-bs-target="#project-form">Add Project</button>
       </div>
     </div>
-    <div class="row">
-        <Project v-for="p in projects" :key="p.id" :project="p" />
-
+    <div class="row mx-5">
+      <Project v-for="p in projects" :key="p.id" :project="p" />
     </div>
   </div>
   <Modal id="project-form">
