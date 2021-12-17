@@ -2,8 +2,8 @@ import { dbContext } from '../db/DbContext.js'
 import { BadRequest, Forbidden } from '../utils/Errors.js'
 
 class ProjectsService {
-  async getAll(query) {
-    const projects = await dbContext.Projects.find(query).populate('creator', 'name picture')
+  async getAll(creatorId) {
+    const projects = await dbContext.Projects.find({ creatorId }).populate('creator', 'name picture')
     return projects
   }
 

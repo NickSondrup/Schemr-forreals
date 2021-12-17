@@ -7,10 +7,10 @@ export class ProjectsController extends BaseController {
   constructor() {
     super('api/projects')
     this.router
+      .use(Auth0Provider.getAuthorizedUserInfo)
       .get('', this.getAll)
       .get('/:projectId', this.getById)
       .get('/:projectId/sections', this.getSections)
-      .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.createProject)
       .delete('/:projectId', this.deleteProject)
       .put('/:projectId', this.update)
@@ -18,7 +18,7 @@ export class ProjectsController extends BaseController {
 
   async getAll(req, res, next) {
     try {
-      const projects = await projectsService.getAll(req.query)
+      const projects = await projectsService.getAll(req.userInfo.id)
       res.send(projects)
     } catch (error) {
       next(error)
