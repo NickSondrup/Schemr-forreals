@@ -4,7 +4,7 @@
       <span class="mt-1">{{sectionColor.color.name}}</span>
       <i class="mdi mdi-delete-outline fs-4 text-danger selectable" title="delete" @click="deleteSectionColor(sectionColor.id)"></i>
     </div>
-    <div :style="{backgroundColor: sectionColor.color.hexcode}" class="color-block border border-dark border-4 rounded-circle"></div>
+    <div :style="{backgroundColor: sectionColor.color.hexcode}" class="color-block rounded-circle"></div>
   </div>
 </template>
 
@@ -36,6 +36,7 @@ export default {
 <style lang="scss" scoped>
 .color-block{
   height: 5rem;
+  box-shadow: 10px 10px 10px black;
 }
 .delete-button{
   color: #6a0001;

@@ -41,5 +41,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+.btn{
+  box-shadow: 5px 5px 10px;
+}
 </style>

@@ -2,13 +2,13 @@
   <div v-if="project">
     <div class="container-fluid">
       <div class="row mt-3 title-row">
-        <div class="col-md-4">
+        <div class="offset-1 col-md-3">
           <div class=" d-flex justify-content-evenly mb-4">
             <h1 class="fw-bolder">{{project.name}}</h1>
           </div>
           <button @click="deleteProject(project.id)" class="btn btn-outline-secondary ms-4">Remove Project</button>
           <h2 class="ms-4">Sections:</h2>
-          <button class="ms-4 fw-bold btn btn-primary" data-bs-toggle="modal" data-bs-target="#section-form">Add Section</button>
+          <button class="ms-4 fw-bold btn add-btn btn-primary" data-bs-toggle="modal" data-bs-target="#section-form">Add Section</button>
           <Section v-for="s in sections" :key="s.id" :section="s"/>
         </div>
         <div class="col-md-8 text-center">
@@ -83,8 +83,12 @@ export default {
 <style lang="scss" scoped>
   .project-picture{
     max-height: 500px;
+    box-shadow: 15px 15px 10px;
   }
   .delete-button{
   color: #6a0001;
+  }
+  .add-btn{
+  box-shadow: 5px 5px 10px;
   }
 </style>
