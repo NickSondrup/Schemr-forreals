@@ -29,7 +29,7 @@ export default {
 <style lang="scss">
 @import "./assets/scss/main.scss";
 .bg-light-grey{
-  background: #6b6d70;
+  background-image: linear-gradient(to bottom right, #7a7b7e, #2b2b2b);
 }
 .bg-dark-grey{
   background: #2a2a2b;
