@@ -4,11 +4,11 @@
       <div class="row mt-3 title-row">
         <div class="offset-1 col-md-3">
           <div class=" d-flex justify-content-evenly mb-4">
-            <h1 class="fw-bolder">{{project.name}}</h1>
+            <h1 class="fw-bolder project-title">{{project.name}}</h1>
           </div>
-          <button @click="deleteProject(project.id)" class="btn btn-outline-secondary ms-4">Remove Project</button>
+          <button @click="deleteProject(project.id)" class="btn btn-outline-secondary ms-4 mb-2">Remove Project</button>
           <h2 class="ms-4">Sections:</h2>
-          <button class="ms-4 fw-bold btn add-btn btn-primary" data-bs-toggle="modal" data-bs-target="#section-form">Add Section</button>
+          <button class="ms-4 mb-2 fw-bold btn add-btn btn-primary" data-bs-toggle="modal" data-bs-target="#section-form">Add Section</button>
           <Section v-for="s in sections" :key="s.id" :section="s"/>
         </div>
         <div class="col-md-8 text-center">
@@ -90,5 +90,8 @@ export default {
   }
   .add-btn{
   box-shadow: 5px 5px 10px;
+  }
+  .project-title{
+    text-shadow: 2px 2px 2px;
   }
 </style>

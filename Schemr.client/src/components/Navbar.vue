@@ -3,7 +3,7 @@
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex">
         <img src="../assets/img/color-cirlce.png" alt="" height="60">
-        <h1 class="text-primary ms-2 m-auto">Schemr</h1>
+        <h1 class="text-primary title ms-2 m-auto">Schemr</h1>
       </div>
     </router-link>
     <button
@@ -122,5 +122,8 @@ a:hover {
 }
 .bg-dark-grey{
   background: #2a2a2b;
+}
+.title{
+  text-shadow: 4px 4px 4px #133e54;
 }
 </style>

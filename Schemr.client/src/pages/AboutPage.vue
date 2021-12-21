@@ -7,7 +7,7 @@
           <div class="">
             <div class="my-3">
             <h1>About Me</h1>
-            <img src="src/assets/img/IMG_9655.jpg" alt="Picture of me" width="260" class="img-fluid rounded-pill">
+            <img src="src/assets/img/IMG_9655.jpg" alt="Picture of me" width="260" class="img-fluid rounded-pill picture">
             </div>
             <div class="text-start mx-3">
               <ul>
@@ -33,6 +33,9 @@ export default {
 <style lang="scss" scoped>
 .about-card{
   max-width: 35rem;
+  box-shadow: 10px 10px 10px black;
 }
-
+.picture{
+  box-shadow: 10px 10px 10px black;
+}
 </style>

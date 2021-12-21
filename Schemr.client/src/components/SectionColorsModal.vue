@@ -9,7 +9,7 @@
         <label class="me-2 fw-bold" for="createSectionColor">Add Color:</label>
         <select name="createSectionColor"
          id="createSectionColor" 
-         class="mt-3 rounded border border-dark" 
+         class="mt-3 rounded border border-dark shadow" 
          v-model="editable.colorId" 
          @change="createSectionColor(section.id)"
          >
