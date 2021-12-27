@@ -16,6 +16,10 @@ class ColorsService {
   }
 
   async createColor(data) {
+    // const colorCheck = data.hexcode.split()
+    // if (colorCheck[0] !== '#') {
+    //   throw new BadRequest('hexcode must be hexcode')
+    // }
     const color = await dbContext.Colors.create(data)
     await color.populate('creator', 'name picture')
     return color
