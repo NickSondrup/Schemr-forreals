@@ -94,4 +94,7 @@ export default {
   .project-title{
     text-shadow: 2px 2px 2px;
   }
+  .project-button{
+    box-shadow: 5px 5px 10px;
+  }
 </style>
